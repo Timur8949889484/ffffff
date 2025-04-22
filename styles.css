@@ -1,0 +1,628 @@
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Шапка */
+.header {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 80px;
+  height: 70px;
+  margin-right: 15px;
+  transition: transform 0.3s ease-in-out; /* Плавное увеличение */
+  cursor: pointer; /* Курсор меняется на указатель */
+}
+
+.logo-img:hover {
+  transform: scale(1.1); /* Увеличиваем картинку на 10% при наведении */
+}
+
+.logo-text h1 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.logo-text p {
+  font-size: 17px;
+  color: #ccc;
+}
+
+.phone-wrapper {
+  display: flex;
+  align-items: center; /* Выравнивает элементы по вертикали */
+  border: 2px solid #007bff; /* Синяя рамка вокруг картинки и номера */
+  padding: 10px 20px; /* Отступы внутри рамки */
+  border-radius: 8px; /* Закругленные углы рамки */
+  margin-left: auto; /* Отодвигает контейнер вправо */
+  transition: transform 0.3s ease-in-out; /* Плавное увеличение при наведении */
+  cursor: pointer; /* Изменение курсора на указатель */
+}
+
+.phone-wrapper:hover {
+  transform: scale(1.05); /* Увеличиваем элемент на 10% при наведении */
+}
+
+.phone-icon-container {
+  width: 50px; /* Размер контейнера для иконки */
+  height: 50px; /* Размер контейнера для иконки */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px; /* Отступ между картинкой и номером */
+}
+
+.phone-icon {
+  width: 50px; /* Размер иконки телефона */
+  height: 50px; /* Пропорции иконки */
+}
+
+.phone-number {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff; /* Синий цвет текста */
+  text-decoration: none; /* Убирает подчеркивание */
+}
+
+.carouselclass {
+  position: relative;
+  background-image: url("images/Back.jpg");
+  -webkit-mask-image: linear-gradient(to bottom, black 100%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  height: 1000px;
+  display: grid;
+  grid-template-rows: 1100px 100px;
+  grid-template-columns: 1fr 50px 50px 50px 50px 50px 1fr;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+}
+
+.carousel-text {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column; /* <-- гарантирует вертикальный порядок */
+  align-items: center;
+  text-align: center;
+  color: #333;
+  font-family: sans-serif;
+  z-index: 10;
+}
+
+.carousel-text h2 {
+  margin: 2px 0;
+  font-size: 80px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+
+/* Анимированная линия */
+.underline {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 6px;
+  width: 0;
+  background-color: #333;
+  animation: underlineGrow 1s ease-out forwards;
+  animation-delay: 4s; /* запускается после текста */
+  opacity: 0;
+}
+
+@keyframes underlineGrow {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    width: 50%;
+    opacity: 1;
+  }
+}
+
+main#carousel {
+  grid-row: 1 / 2;
+  grid-column: 1 / 8;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --items: 5;
+  --middle: 3;
+  --position: 1;
+  pointer-events: none;
+}
+
+div.item {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  --r: calc(var(--position) - var(--offset));
+  --abs: max(calc(var(--r) * -1), var(--r));
+  transition: all 0.25s linear;
+  transform: rotateY(calc(-10deg * var(--r)))
+    translateX(calc(-300px * var(--r)));
+  z-index: calc((var(--position) - var(--abs)));
+}
+
+div.item:nth-of-type(1) {
+  --offset: 1;
+  background-image: url("images/wm1.png");
+  background-size: cover;
+  background-position: center;
+}
+div.item:nth-of-type(2) {
+  --offset: 2;
+  background-image: url("images/wm2.png");
+  background-size: cover;
+  background-position: center;
+}
+div.item:nth-of-type(3) {
+  --offset: 3;
+  background-image: url("images/wm3.png");
+  background-size: cover;
+  background-position: center;
+}
+div.item:nth-of-type(4) {
+  --offset: 4;
+  background-image: url("images/wm4.png");
+  background-size: cover;
+  background-position: center;
+}
+div.item:nth-of-type(5) {
+  --offset: 5;
+  background-image: url("images/wm5.png");
+  background-size: cover;
+  background-position: center;
+}
+
+input[type="radio"] {
+  transform: scale(2.5); /* Увеличивает размер в 2 раза */
+  margin-bottom: 650px; /* Чтобы не прилипали */
+  cursor: pointer;
+}
+
+input:nth-of-type(1) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(1):checked ~ main#carousel {
+  --position: 1;
+}
+
+input:nth-of-type(2) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(2):checked ~ main#carousel {
+  --position: 2;
+}
+
+input:nth-of-type(3) {
+  grid-column: 4 /5;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(3):checked ~ main#carousel {
+  --position: 3;
+}
+
+input:nth-of-type(4) {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(4):checked ~ main#carousel {
+  --position: 4;
+}
+
+input:nth-of-type(5) {
+  grid-column: 6 / 7;
+  grid-row: 2 / 3;
+}
+input:nth-of-type(5):checked ~ main#carousel {
+  --position: 5;
+}
+
+/* Стили для бургер-меню */
+.burger-menu {
+  width: 70px; /* Ширина кнопки */
+  height: 70px; /* Высота кнопки */
+  border: none; /* Без рамки */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* Фиксированное позиционирование */
+  bottom: 20px; /* Отступ от нижнего края */
+  right: 20px; /* Отступ от правого края */
+  z-index: 1000; /* Убедимся, что меню будет поверх других элементов */
+  cursor: pointer; /* Курсор в виде указателя */
+  background-color: #000000;
+  border-radius: 6px; /* Закругление углов кнопки */
+}
+
+/* Стили для полосок бургер-меню */
+.burger-icon {
+  display: block;
+  width: 50px; /* Ширина полоски */
+  height: 8px; /* Толщина полоски */
+  background-color: #ffffff; /* Белые полоски */
+  margin: 8px 0; /* Отступы между полосками */
+  border-radius: 3px; /* Закругление углов полосок */
+  transition: background-color 0.3s ease; /* Плавное изменение цвета */
+}
+
+/* Стили при наведении на весь бургер */
+.burger-menu:hover .burger-icon {
+  background-color: #007bff; /* Цвет полосок при наведении на бургер */
+}
+
+/* Стили для меню */
+.menu {
+  display: none; /* Изначально меню скрыто */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
+  z-index: 999; /* За бургером */
+  justify-content: center;
+  align-items: center;
+}
+
+.menu.open {
+  display: flex; /* Показываем меню при добавлении класса "open" */
+}
+
+.menu ul {
+  position: relative; /* Позволяет крестику быть внутри */
+  list-style: none;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0;
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Стили для списка пунктов меню */
+.menu ul li {
+  margin: 15px 0;
+}
+
+.menu ul li a {
+  color: black;
+  font-size: 28px;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: flex; /* Используем flex для выравнивания текста и картинки */
+  align-items: center; /* Выравнивание по вертикали */
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.menu ul li a:hover {
+  color: #007bff;
+  background-color: #f0f0f0;
+}
+
+/* Стили для WhatsApp */
+.menu ul li a.whatsapp-link {
+  color: green;
+}
+
+.whatsapp-icon {
+  margin-left: 10px;
+  width: 70px;
+  height: 50px;
+}
+
+/* Стили для телефона */
+.menu ul li a.phone-link {
+  color: #007bff;
+}
+
+.phone-image {
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.work-steps {
+  background: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step {
+  flex: 1;
+  min-width: 270px;
+  max-width: 300px;
+  text-align: center; /* Центруем контент */
+}
+
+.step-inner {
+  display: flex;
+  flex-direction: column; /* Важное изменение: вертикальное расположение */
+  align-items: center;
+}
+
+.step-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.step-text h3 {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.step-number {
+  color: #008cff;
+  font-size: 22px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.step-text p {
+  font-size: 14px;
+  margin: 0;
+  color: #333;
+}
+
+.repair-prices {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #fff, #f4f4f4);
+  font-family: sans-serif;
+}
+
+.repair-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.repair-header p {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+.repair-header h2 {
+  font-size: 80px;
+  color: #008aff;
+  font-weight: 700;
+  margin: 0;
+}
+
+.price-table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  color: #222;
+}
+
+.price-table thead th {
+  font-weight: 700;
+  padding: 15px 0;
+  font-size: 18px;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.price-table td {
+  padding: 10px 0;
+  border-bottom: 1px dotted #aaa;
+}
+
+.price-table td:last-child {
+  text-align: right;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.model-viewer-section {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 0px; /* Пространство между блоками */
+  text-align: center;
+}
+
+.model-viewer-section * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Скрываем значок мобильного телефона */
+#ar-prompt {
+  display: none;
+}
+
+.brands-title {
+  font-weight: bold;
+  line-height: 1.4;
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+model-viewer {
+  width: 100%;
+  height: 70vh; /* 70% высоты экрана, можно увеличить/уменьшить */
+  max-width: 1000px;
+  margin-bottom: 10px;
+}
+
+.brand-icons-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.brand-icons-row img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-icons-row.center {
+  justify-content: center;
+}
+
+.brand-icons-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.more-brands {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media screen and (max-width: 767px) {
+  .container {
+    width: 90%; /* Уменьшаем ширину контейнера для мобильных */
+  }
+
+  .header-content {
+    flex-direction: column; /* Выравнивание элементов по вертикали */
+    align-items: flex-start; /* Выравнивание логотипа и телефона слева */
+  }
+
+  .logo-img {
+    width: 60px; /* Уменьшаем размер логотипа для мобильных */
+    height: 55px;
+  }
+
+  .logo-text h1 {
+    font-size: 24px; /* Уменьшаем размер шрифта заголовка */
+  }
+
+  .logo-text p {
+    font-size: 14px; /* Уменьшаем размер шрифта описания */
+  }
+
+  .phone-wrapper {
+    display: none; /* Скрываем блок с телефоном на мобильных устройствах */
+  }
+
+  .phone-number {
+    font-size: 20px; /* Уменьшаем размер шрифта номера телефона */
+  }
+
+  .burger-menu {
+    width: 60px; /* Уменьшаем размер кнопки на мобильных устройствах */
+    height: 60px;
+  }
+
+  .burger-icon {
+    width: 40px; /* Уменьшаем ширину полосок */
+    height: 6px; /* Уменьшаем толщину полосок */
+    margin: 8px 0; /* Отступы между полосками */
+  }
+
+  .menu-content {
+    padding: 15px; /* Меньше отступов в меню на мобильных устройствах */
+  }
+
+  .menu ul li a {
+    font-size: 18px; /* Меньше шрифт для мобильных */
+  }
+
+  .promo-section {
+    height: 15vh; /* Половина экрана */
+    background-position: center calc(0% - 1px);
+  }
+
+  .step-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 15px;
+  }
+
+  .step-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .brand-icons-row {
+    gap: 20px;
+  }
+
+  .carousel-text h2 {
+    font-size: 40px;
+  }
+}

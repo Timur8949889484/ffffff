@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лендинг стиралок</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="images/log.png" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Содержимое страницы -->
+
+    <header class="header">
+      <div
+        class="container header-content"
+        style="display: flex; align-items: center"
+      >
+        <div class="logo" style="display: flex; align-items: center">
+          <a href="index.html" aria-label="Главная страница">
+            <img src="images/log.png" alt="Логотип" class="logo-img" />
+          </a>
+          <div class="logo-text" style="text-align: left">
+            <h1>Mechanic Master</h1>
+            <p>Ремонт стиральных машин</p>
+          </div>
+        </div>
+        <div class="phone-wrapper" aria-label="Контактный телефон">
+          <div class="phone-icon-container">
+            <img
+              src="images/Phone.png"
+              alt="Иконка телефона"
+              class="phone-icon"
+            />
+          </div>
+          <a href="tel:+0123456789" class="phone-number">+0 123 456 789</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="carouselclass">
+      <div class="carousel-text">
+        <h2 class="animate__animated animate__fadeInDown animate__delay-0s">
+          БЫСТРЫЙ РЕМОНТ
+        </h2>
+        <h2 class="animate__animated animate__fadeInDown animate__delay-1s">
+          СТИРАЛЬНЫХ МАШИН
+        </h2>
+        <h2 class="animate__animated animate__fadeInDown animate__delay-2s">
+          ОТ 600 СОМ
+          <span class="underline"></span>
+        </h2>
+      </div>
+
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" checked />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <main id="carousel">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </main>
+    </section>
+
+    <section class="work-steps">
+      <h2 class="section-title animate__animated animate__fadeInUp">
+        КАК МЫ РАБОТАЕМ?
+      </h2>
+
+      <div class="steps-container">
+        <!-- Шаг 1 -->
+        <div class="step" data-aos="fade-right" data-aos-delay="100">
+          <div class="step-inner">
+            <img src="images/icon1.png" alt="Иконка звонка" class="step-icon" />
+            <div class="step-text">
+              <h3>
+                <span class="step-number">01.</span> ВЫ ЗВОНИТЕ ИЛИ ОСТАВЛЯЕТЕ
+                ЗАЯВКУ
+              </h3>
+              <p>
+                Опытный мастер связывается с Вами и отвечает на все вопросы —
+                это бесплатно.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Шаг 2 -->
+        <div class="step" data-aos="fade-right" data-aos-delay="200">
+          <div class="step-inner">
+            <img
+              src="images/icon2.png"
+              alt="Иконка диагностики"
+              class="step-icon"
+            />
+            <div class="step-text">
+              <h3>
+                <span class="step-number">02.</span> ОПРЕДЕЛЯЕМСЯ С ВЕРОЯТНОЙ
+                ПОЛОМКОЙ
+              </h3>
+              <p>
+                Выслушав Вас, мастер определяет вероятную поломку, озвучивает
+                стоимость работы.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Шаг 3 -->
+        <div class="step" data-aos="fade-right" data-aos-delay="300">
+          <div class="step-inner">
+            <img src="images/icon3.png" alt="Иконка выезда" class="step-icon" />
+            <div class="step-text">
+              <h3><span class="step-number">03.</span> ВЫЕЗД К ВАМ</h3>
+              <p>
+                Вы договариваетесь про удобное время, когда мастер может к Вам
+                приехать и заняться ремонтом Вашей стиральной машины.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Шаг 4 -->
+        <div class="step" data-aos="fade-right" data-aos-delay="400">
+          <div class="step-inner">
+            <img
+              src="images/icon4.png"
+              alt="Иконка результата"
+              class="step-icon"
+            />
+            <div class="step-text">
+              <h3><span class="step-number">04.</span> ВСЕ РАБОТАЕТ</h3>
+              <p>
+                Вместе с мастером проверяете работу стиральной машины, если Вас
+                все устраивает — оплачиваете работу мастеру.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="repair-prices">
+      <div class="repair-header">
+        <p
+          class="section-title animate__animated animate__fadeInUp animate__delay-0s"
+        >
+          Поломки, <br />которые мы устраним
+        </p>
+        <h2
+          class="repair-header animate__animated animate__fadeInDown animate__delay-1s"
+        >
+          за 1 час
+        </h2>
+      </div>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th class="left-align">Вид работ</th>
+            <th class="right-align">Цена</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-aos="fade-left" data-aos-delay="100">
+            <td>Вызов мастера по Москве</td>
+            <td>Бесплатно</td>
+          </tr>
+          <tr data-aos="fade-right" data-aos-delay="150">
+            <td>Диагностика (в случае ремонта)</td>
+            <td>Бесплатно</td>
+          </tr>
+          <tr data-aos="fade-left" data-aos-delay="200">
+            <td>Течет вода под стиральной машиной</td>
+            <td>от 700 сом</td>
+          </tr>
+          <tr data-aos="fade-right" data-aos-delay="250">
+            <td>Не работает отжим</td>
+            <td>от 800 сом</td>
+          </tr>
+          <tr data-aos="fade-left" data-aos-delay="300">
+            <td>Не открывается дверь</td>
+            <td>от 800 сом</td>
+          </tr>
+          <tr data-aos="fade-right" data-aos-delay="350">
+            <td>Нет налива</td>
+            <td>от 700 сом</td>
+          </tr>
+          <tr data-aos="fade-left" data-aos-delay="400">
+            <td>Нет слива</td>
+            <td>от 600 сом</td>
+          </tr>
+          <tr data-aos="fade-right" data-aos-delay="450">
+            <td>Не греет воду</td>
+            <td>от 800 сом</td>
+          </tr>
+          <tr data-aos="fade-left" data-aos-delay="500">
+            <td>Не отжимает</td>
+            <td>от 800 сом</td>
+          </tr>
+          <tr data-aos="fade-right" data-aos-delay="550">
+            <td>Барабан не крутится</td>
+            <td>от 700 сом</td>
+          </tr>
+          <tr data-aos="fade-left" data-aos-delay="600">
+            <td>Шумит</td>
+            <td>от 600 сом</td>
+          </tr>
+          <tr data-aos="fade-right" data-aos-delay="650">
+            <td>Не работает таймер</td>
+            <td>от 950 сом</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 3D Model Viewer Section -->
+    <section class="model-viewer-section">
+      <h2
+        class="brands-title animate__animated animate__fadeInDown animate__delay-1s"
+      >
+        СТИРАЛЬНЫЕ МАШИНЫ,<br />КОТОРЫЕ МЫ РЕМОНТИРУЕМ
+      </h2>
+
+      <!-- Первая линия из 6 иконок -->
+      <div
+        class="brand-icons-row d-flex flex-wrap justify-content-center gap-3"
+      >
+        <img
+          src="images/ardo.png"
+          alt="LG"
+          class="animate__animated animate__fadeInUp animate__delay-3s"
+        />
+        <img
+          src="images/ariston.png"
+          alt="Samsung"
+          class="animate__animated animate__fadeInUp animate__delay-2s"
+        />
+        <img
+          src="images/beko.png"
+          alt="Bosch"
+          class="animate__animated animate__fadeInUp animate__delay-1s"
+        />
+        <img
+          src="images/bosch.png"
+          alt="Indesit"
+          class="animate__animated animate__fadeInUp animate__delay-1s"
+        />
+        <img
+          src="images/electrolux.png"
+          alt="Whirlpool"
+          class="animate__animated animate__fadeInUp animate__delay-2s"
+        />
+        <img
+          src="images/gorenje.png"
+          alt="Siemens"
+          class="animate__animated animate__fadeInUp animate__delay-3s"
+        />
+      </div>
+
+      <model-viewer
+        src="stylized_washing_machine.glb"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        disable-pan
+        tone-mapping="neutral"
+        poster="poster.webp"
+        shadow-intensity="1"
+        camera-orbit="89.15deg 85.2deg 1397m"
+        field-of-view="30deg"
+        auto-rotate
+        disable-zoom
+      >
+        <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+        </div>
+
+        <button slot="ar-button" id="ar-button"></button>
+
+        <div id="ar-prompt">
+          <img
+            src="https://modelviewer.dev/shared-assets/icons/hand.png"
+            alt="AR prompt"
+          />
+        </div>
+      </model-viewer>
+
+      <!-- Вторая группа: 6 иконок + 2 по центру -->
+      <div class="brand-icons-group">
+        <div
+          class="brand-icons-row d-flex flex-wrap justify-content-center gap-3"
+        >
+          <img
+            src="images/indesit.png"
+            alt="Haier"
+            class="animate__animated animate__fadeInUp animate__delay-1s"
+          />
+          <img
+            src="images/kaiser.png"
+            alt="AEG"
+            class="animate__animated animate__fadeInUp animate__delay-2s"
+          />
+          <img
+            src="images/lg.png"
+            alt="Electrolux"
+            class="animate__animated animate__fadeInUp animate__delay-3s"
+          />
+          <img
+            src="images/samsung.png"
+            alt="Hotpoint"
+            class="animate__animated animate__fadeInUp animate__delay-3s"
+          />
+          <img
+            src="images/siemens.png"
+            alt="Zanussi"
+            class="animate__animated animate__fadeInUp animate__delay-2s"
+          />
+          <img
+            src="images/whirlpool.png"
+            alt="Beko"
+            class="animate__animated animate__fadeInUp animate__delay-1s"
+          />
+        </div>
+      </div>
+
+      <p class="more-brands">…и еще 105 брендов</p>
+    </section>
+
+    <!-- Бургер-меню -->
+    <button class="burger-menu" aria-label="Открыть меню">
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+      <span class="burger-icon"></span>
+    </button>
+
+    <nav class="menu" aria-label="Основное меню">
+      <ul>
+        <li><a>Работает ежедневно</a></li>
+        <li><a>График: 08:00 до 20:00</a></li>
+        <li>
+          <br /><br /><br />
+          <a href="tel:+0123456789" class="phone-link">
+            +0 123 456 789
+            <img src="images/Phone.png" alt="PhoneNumber" class="phone-image" />
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="whatsapp-link">
+            НАПИСАТЬ В WHATSAPP
+            <img
+              src="images/whatsuplog.png"
+              alt="WhatsApp"
+              class="whatsapp-icon"
+            />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+
+  <script src="scripts.js"></script>
+  <script
+    type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1500,
+    });
+  </script>
+</html>
