@@ -6,6 +6,11 @@
   font-family: Arial, sans-serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
@@ -99,6 +104,7 @@
   align-items: center;
   justify-items: center;
   overflow: hidden;
+  overflow-x: hidden;
 }
 
 .carousel-text {
@@ -622,7 +628,22 @@ model-viewer {
     gap: 20px;
   }
 
+  .carousel-text {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 0 10px;
+  }
+
   .carousel-text h2 {
     font-size: 40px;
+    white-space: normal; /* разрешаем перенос */
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .carousel-text h2:not(:last-child) {
+    margin-bottom: 10px; /* добавим отступ между строками */
   }
 }
